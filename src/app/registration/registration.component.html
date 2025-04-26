@@ -1,0 +1,72 @@
+<div fxFlex fxLayoutAlign="center center" fxLayout="row" class="registration-container">
+    <div fxFlex="50" fxLayout="column" class="registration-form" [formGroup]="registrationForm">
+
+        <h1>Registration Form</h1>
+
+        <mat-form-field fxFlex="100" appearance="outline">
+            <mat-label>Name : </mat-label>
+            <input type="text" name="name" matInput formControlName="name" />
+        </mat-form-field>
+        <div class="red"
+            *ngIf="registrationForm.controls['name']?.touched && registrationForm.controls['phone']?.errors?.['required']">
+            Name is required
+        </div>
+
+        <mat-form-field fxFlex="100" appearance="outline">
+            <mat-label>Phone : </mat-label>
+            <input type="text" name="phone" matInput formControlName="phone" />
+        </mat-form-field>
+        <div class="red" *ngIf="registrationForm.controls['phone']?.touched">
+            <ng-container *ngIf="registrationForm.controls['phone']?.errors?.['required']">
+                Phone is required
+            </ng-container>
+            <ng-container *ngIf="registrationForm.controls['phone']?.errors?.['minlength']">
+                Phone length must be 10
+            </ng-container>
+        </div>
+
+        <mat-form-field fxFlex="100" appearance="outline">
+            <mat-label>City : </mat-label>
+            <mat-select formControlName="city">
+                <mat-option *ngFor="let city of cityArray" [value]="city.id">{{city.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="red"
+            *ngIf="registrationForm.controls['city']?.touched && registrationForm.controls['city']?.errors?.['required']">
+            City is required
+        </div>
+
+
+        <mat-form-field fxFlex="100" appearance="outline">
+            <mat-label>Email : </mat-label>
+            <input type="email" name="email" matInput formControlName="email" />
+        </mat-form-field>
+        <div class="red" *ngIf="registrationForm.controls['email']?.touched">
+            <ng-container *ngIf="registrationForm.controls['email']?.errors?.['required']">
+                email is required
+            </ng-container>
+            <ng-container *ngIf="registrationForm.controls['email']?.errors?.['email']">
+                invalid email
+            </ng-container>
+        </div>
+
+        <mat-form-field fxFlex="100" appearance="outline">
+            <mat-label>Password : </mat-label>
+            <input type="password" name="password" matInput formControlName="password" />
+        </mat-form-field>
+        <div class="red" *ngIf="registrationForm.controls['password']?.touched">
+            <ng-container *ngIf="registrationForm.controls['password']?.errors?.['required']">
+                password is required
+            </ng-container>
+            <ng-container *ngIf="registrationForm.controls['password']?.errors?.['pattern']">
+                Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters
+            </ng-container>
+          
+        </div>
+
+
+        <button mat-button mat-stroked-button [ngClass]="{'submit-btn': registrationForm.valid}"
+            [disabled]="!registrationForm.valid">Submit</button>
+        <button mat-button mat-stroked-button class="cancel-btn">Cancel</button>
+    </div>
+</div>

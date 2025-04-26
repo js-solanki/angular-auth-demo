@@ -1,0 +1,25 @@
+<nav class="header">
+    <div fxFlex="60" >
+        <span [routerLink]="'/'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Header LOGO</span>
+    </div>
+    <div fxFlex="40" *ngIf="!isLogin">
+        <span [routerLink]="'login'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+            LOGIN
+        </span>
+        <span [routerLink]="'registration'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+            REGISTRATION
+        </span>
+    </div>
+    <div fxFlex="40" *ngIf="isLogin">
+        <span [routerLink]="'dashboard'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+            Dashboard
+        </span>
+        <span [routerLink]="'profile'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+            Profile
+        </span>
+        <span (click)="logout()">
+            Logout
+        </span>
+    </div>
+
+</nav>

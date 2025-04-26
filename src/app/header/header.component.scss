@@ -1,0 +1,17 @@
+.header {
+    padding: 16px;
+    margin-bottom: 16px;
+    background: black;
+
+    span {
+        font-weight: 800px;
+        padding: 0px 8px;
+        text-decoration: none;
+        cursor: pointer;
+        color: white;
+
+        &.active{
+            color: blue;
+        }
+    }
+}

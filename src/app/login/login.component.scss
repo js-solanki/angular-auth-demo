@@ -1,0 +1,22 @@
+.login-container {
+    .login-form {
+        padding: 16px;
+        background-color: aliceblue;
+        opacity: 50;
+
+        .submit-btn {
+            background-color: blue !important;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .cancel-btn {
+            background-color: lightcoral;
+            color: black;
+        }
+
+        .error {
+            color: red;
+        }
+    }
+}
