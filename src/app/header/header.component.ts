@@ -21,11 +21,9 @@ export class HeaderComponent implements OnChanges, OnInit {
 
   ngOnInit() {
     this.isLogin = this.authService.getLogin();
-    console.log("here login ", this.authService.getLogin());
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("here changes", changes);
   }
 
   logout() {

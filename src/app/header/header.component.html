@@ -1,8 +1,15 @@
 <nav class="header">
-    <div fxFlex="60" >
+    <div fxFlex="40" >
         <span [routerLink]="'/'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Header LOGO</span>
+
+        <span [routerLink]="'counter'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+            Counter
+        </span>
+        <span [routerLink]="'post'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+            Post
+        </span>
     </div>
-    <div fxFlex="40" *ngIf="!isLogin">
+    <div fxFlex *ngIf="!isLogin" fxLayoutAlign="end center">
         <span [routerLink]="'login'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
             LOGIN
         </span>
@@ -10,7 +17,7 @@
             REGISTRATION
         </span>
     </div>
-    <div fxFlex="40" *ngIf="isLogin">
+    <div fxFlex *ngIf="isLogin" fxLayoutAlign="end center">
         <span [routerLink]="'dashboard'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
             Dashboard
         </span>
@@ -21,5 +28,4 @@
             Logout
         </span>
     </div>
-
 </nav>

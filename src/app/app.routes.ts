@@ -12,6 +12,9 @@ export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'dashboard', component: DashboardComponent },
     //lazy load component
-    { path: "profile", loadComponent: () => import('./profile/profile.component').then(m => m.ProfileComponent), canActivate: [authGuardGuard], }
+    { path: "profile", loadComponent: () => import('./profile/profile.component').then(m => m.ProfileComponent), canActivate: [authGuardGuard], },
+    { path: "counter", loadComponent: () => import('./counter/counter/counter.component').then(m => m.CounterComponent) },
+    { path: "post", loadComponent: () => import('./post/post.component').then(m => m.PostComponent) }
+    
 ];
 

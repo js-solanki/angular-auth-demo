@@ -1,0 +1,17 @@
+<table style="border: 1px solid ;">
+    <thead>
+        <th>id</th>
+        <th>title</th>
+        <th>description</th>
+    </thead>
+    <tbody>
+        <ng-container  *ngFor="let post of ($post|async)">
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.description }}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+
