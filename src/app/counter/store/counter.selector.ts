@@ -1,10 +1,9 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
-import { counterState } from '../../constant/state';
-
-export const selectCounterState = createFeatureSelector<any>('counter');
+import { CounterState, STATE_COUNTER } from '../../store';
+export const selectCounterState = createFeatureSelector<any>(STATE_COUNTER);
 
 export const selectCounterValue = createSelector(
     selectCounterState,
-    (state: counterState) =>  state.count
+    (state: CounterState) =>  state.count
     
 );

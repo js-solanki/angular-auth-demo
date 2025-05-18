@@ -1,3 +1,5 @@
+export const STATE_COUNTER = 'counter';
+
 export interface CounterState {
     count: number;
 }
@@ -16,6 +18,7 @@ export interface postState {
         add : Post
 }
 
+export const STATE_POST = "post";
 
 export const initialPostListState : Post[] = [
     {
@@ -24,25 +27,19 @@ export const initialPostListState : Post[] = [
         description : "Test post description 1"
     },
     {
-        id: 1,
+        id: 2,
         title : "Test post 2",
-        description : "Test post description 1"
+        description : "Test post description 2"
     },
     {
-        id: 1,
+        id: 3,
         title : "Test post 3",
-        description : "Test post description 1"
+        description : "Test post description 3"
     }
 ]
 
-export const initialPostState = {
-    list : initialPostListState,
-    add : {
-        id : 0,
-        title : 0,
-        description : 0
-    }
-}
+export const initialPostState =  initialPostListState
+
 
 export const AppState = {
     counter: initialCounterState

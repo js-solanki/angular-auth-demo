@@ -6,6 +6,5 @@ export const selectPostState = createFeatureSelector<any>('post');
 export const selectPostValue = createSelector(
     selectPostState,
     (state: postState) =>  { 
-        console.log("here state",state);
-        return state.list}
+        return state}
 );

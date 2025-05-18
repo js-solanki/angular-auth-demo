@@ -1,0 +1,20 @@
+<div class="add-post-form-container">
+    <p>add-post-form</p>
+    <div [formGroup]="addPostForm">
+        <div>
+            <div>name : <span>*</span></div>
+            <mat-form-field apperance="outline">
+                <input type="text" matInput formControlName="name">
+            </mat-form-field>
+        </div>
+    
+        <div>
+            <div>description<span>*</span></div>
+            <mat-form-field apperance="outline">
+            <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+        </div>
+        <button mat-button mat-stroked-button (click)="saveData()" [disabled]="!addPostForm.valid" type="submit">submit</button>
+        <button mat-button mat-stroked-button (click)="clearData()">cancel</button>
+    </div>
+</div>

@@ -11,6 +11,5 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './counter.component.scss'
 })
 export class CounterComponent {
-
   incrementalValue : number = 0;
 }

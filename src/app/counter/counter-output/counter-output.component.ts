@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectCounterValue } from '../store/counter.selector';
-import { counterState } from '../../constant/state';
+import { CounterState } from '../../store';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { counterState } from '../../constant/state';
 export class CounterOutputComponent {
 
   $count: Observable<any>;
-  constructor(private store: Store<counterState>) {
+  constructor(private store: Store<CounterState>) {
     this.$count = this.store.select(selectCounterValue);
   }
 }
